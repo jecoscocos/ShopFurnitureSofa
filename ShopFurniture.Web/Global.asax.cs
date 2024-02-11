@@ -16,6 +16,7 @@ namespace ShopFurniture.Web
             // Код, выполняемый при запуске приложения
            AreaRegistration.RegisterAllAreas();
            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            // Код, выполняемый при запуске приложения
         }
     }
 }
