@@ -22,6 +22,7 @@
     <title>Divano - Furniture HTML Template</title>
 
     <!--CSS bundle -->
+    <!--
     <link rel="stylesheet" media="all" href="Content/bootstrap.css" />
     <link rel="stylesheet" media="all" href="Content/animate.css" />
     <link rel="stylesheet" media="all" href="Content/font-awesome.css" />
@@ -30,6 +31,20 @@
     <link rel="stylesheet" media="all" href="Content/magnific-popup.css" />
     <link rel="stylesheet" media="all" href="Content/owl.carousel.css" />
     <link rel="stylesheet" media="all" href="Content/theme.css" />
+    -->
+    @Styles.Render("~/bundles/bootstrap/css")
+    @Styles.Render("~/bundles/animate/css")
+    @Styles.Render("~/bundles/font-awesome/css")
+    @Styles.Render("~/bundles/ion-range-slider/css")
+    @Styles.Render("~/bundles/linear-icons/css")
+    @Styles.Render("~/bundles/magnific-popup/css")
+    @Styles.Render("~/bundles/owl.carousel/css")
+    @Styles.Render("~/bundles/theme/css")
+
+    @if (IsSectionDefined("Styles"))
+    {@RenderSection("Styles", required: false) }
+
+    <!--Styles.Render("~/bundles/main/css") -->
 
     <!--Google fonts-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600" rel="stylesheet">
@@ -383,30 +398,42 @@
 
     <!-- ================== Footer  ================== -->
 
-        <footer>
+    <footer>
 
-            <div class="container-fluid">
+        <div class="container-fluid">
 
-                <div class="footer-wrap">
+            <div class="footer-wrap">
 
-                    <div class="container">
-                        @Html.Partial("_Footer")}
-                    </div>
+                <div class="container">
+                    @Html.Partial("_Footer")}
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 
 
-        <!--Scripts -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.js"></script>
-        <script src="js/ion.rangeSlider.js"></script>
-        <script src="js/magnific-popup.js"></script>
-        <script src="js/owl.carousel.js"></script>
-        <script src="js/tilt.jquery.js"></script>
-        <script src="js/jquery.easypiechart.js"></script>
-        <script src="js/bigtext.js"></script>
-        <script src="js/main.js"></script>
+    <!--Scripts -->
+    <!--
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/ion.rangeSlider.js"></script>
+    <script src="js/magnific-popup.js"></script>
+    <script src="js/owl.carousel.js"></script>
+    <script src="js/tilt.jquery.js"></script>
+    <script src="js/jquery.easypiechart.js"></script>
+    <script src="js/bigtext.js"></script>
+    <script src="js/main.js"></script>
+    -->
+    @Scripts.Render("~/bundles/jquery.min/js")
+    @Scripts.Render("~/bundles/bootstrap/js")
+    @Scripts.Render("~/bundles/ion.rangeSlider/js")
+    @Scripts.Render("~/bundles/magnific-popup/js")
+    @Scripts.Render("~/bundles/owl.carousel/js")
+    @Scripts.Render("~/bundles/tilt.jquery/js")
+    @Scripts.Render("~/bundles/bigtext/js")
+    @Scripts.Render("~/bundles/main/js")
+    <!-- Handler for local scripts -->
+    @RenderSection("scripts", required: false)
 
 
 </body>
